@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and refer to [ReactMaker](https://github.com/ReactMaker).
 
 
-[成果](https://grey14.github.io/create-react-app/#/)
+[成果](https://grey14.github.io/react-practice/)
 
 ## How to use create-react-app
 ```bash
