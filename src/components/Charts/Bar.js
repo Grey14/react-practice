@@ -9,7 +9,7 @@ export default class Bar extends Component {
       chartSeries = [
         {
           field: 'Avg',
-          name: 'PM2.5',
+          name: 'PM2.5 Average',
           style: {
             'fill-opacity': .5
           }
@@ -26,16 +26,16 @@ export default class Bar extends Component {
       if (!res[value.County]) {
         res[value.County] = {
           County: value.County,
-          "PM2.5": 0,
+          "PM2.5_AVG": 0,
           Count: 0,
           Avg: 0
         };
         tmpDAta.push(res[value.County])
       }
-      // console.log(value["PM2.5"]);
-      res[value.County]["PM2.5"] += parseInt(value["PM2.5"] === "ND" ? "0" : value["PM2.5"]);
+      // console.log(value["PM2.5_AVG"]);
+      res[value.County]["PM2.5_AVG"] += parseInt(isNaN(value["PM2.5_AVG"]) ? "0" : value["PM2.5_AVG"],10);
       res[value.County].Count++;
-      res[value.County].Avg = res[value.County]["PM2.5"] / res[value.County].Count;
+      res[value.County].Avg = res[value.County]["PM2.5_AVG"] / res[value.County].Count;
       return res;
     }, {});
     console.log(tmpDAta);
