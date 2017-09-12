@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Input, Container, Button
+  Input, Button
 } from 'reactstrap';
 import Student from './Student';
 import StudentJosn from '../../data/Student.json';
@@ -45,22 +45,19 @@ export default class StudentMain extends Component {
     const { student } = this.state;
 
     return (
-      <Container>
-
-        <div className="card border-secondary">
-          <div className="card-header">
-            資料表
+      <div className="card border-secondary">
+        <div className="card-header">
+          資料表
           </div>
-          <div className="card-block">
+        <div className="card-block">
 
-            <Button onClick={() => this.GetData()} color="success">Get Data</Button>{' '}
-            <Button onClick={() => this.Clear()}>Clear</Button>
-            <hr />
-            <Input type="text" value={this.state.filterKey} onChange={this.ShowFilter} placeholder="filter" />
-            <Student student={student} />
-          </div>
-        </div >
-      </Container>
+          <Button onClick={() => this.GetData()} color="success">Get Data</Button>{' '}
+          <Button onClick={() => this.Clear()}>Clear</Button>
+          <hr />
+          <Input type="text" value={this.state.filterKey} onChange={this.ShowFilter} placeholder="filter" />
+          <Student student={student} />
+        </div>
+      </div >
     );
   }
 }

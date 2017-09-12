@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Container, Row, Col, Button, Jumbotron, Modal, ModalHeader, ModalBody, ModalFooter, Alert
+  Row, Col, Button, Jumbotron, Modal, ModalHeader, ModalBody, ModalFooter, Alert
 } from 'reactstrap';
 
 import AlbumJSON from '../../data/Album.json';
@@ -61,7 +61,7 @@ export default class ProductMain extends Component {
     // 直接return 可以不用加{}
 
     return (
-      <Container>
+      <div>
         <Row>
           <Col md="12">
             <Jumbotron>
@@ -113,7 +113,7 @@ export default class ProductMain extends Component {
             <Button color="secondary" onClick={this.toggle}>取消</Button>
           </ModalFooter>
         </Modal>
-      </Container>
+      </div>
     );
   }
 }

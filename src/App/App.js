@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
 import PropTypes from 'prop-types';
+import { Container } from 'reactstrap';
 import logo from '../images/logo.svg';
 import '../css/App.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -39,7 +40,9 @@ const App = (props) => (
       </div>
     </nav>
     <div className="App-intro">
-      {props.children}
+      <Container>
+        {props.children}
+      </Container>
     </div>
   </div>
 );

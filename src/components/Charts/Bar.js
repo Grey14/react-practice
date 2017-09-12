@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import { BarChart } from 'react-d3-basic';
+//import { BarChart } from 'react-d3-basic';
+import { BarTooltip } from 'react-d3-tooltip';
 import ChartData from '../../data/AQI.json';
+//var BarTooltip = require('react-d3-tooltip').BarTooltip;
 
 export default class Bar extends Component {
   render() {
+
+    var SimpleTooltipStyle = require('react-d3-tooltip').SimpleTooltip;
     var width = 1200,
       height = 400,
       chartSeries = [
@@ -33,22 +37,24 @@ export default class Bar extends Component {
         tmpDAta.push(res[value.County])
       }
       // console.log(value["PM2.5_AVG"]);
-      res[value.County]["PM2.5_AVG"] += parseInt(isNaN(value["PM2.5_AVG"]) ? "0" : value["PM2.5_AVG"],10);
+      res[value.County]["PM2.5_AVG"] += parseInt(isNaN(value["PM2.5_AVG"]) ? "0" : value["PM2.5_AVG"], 10);
       res[value.County].Count++;
       res[value.County].Avg = res[value.County]["PM2.5_AVG"] / res[value.County].Count;
       return res;
     }, {});
     console.log(tmpDAta);
     return (
-      <BarChart
+      <BarTooltip
         data={tmpDAta}
         width={width}
         height={height}
         chartSeries={chartSeries}
         x={x}
         xScale={xScale}
-        // yTicks= {yTicks}
-      />
+      // yTicks= {yTicks}
+      >
+        <SimpleTooltipStyle />
+      </BarTooltip >
     );
   }
 }

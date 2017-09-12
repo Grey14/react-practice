@@ -36,6 +36,7 @@
     "react-addons-css-transition-group": "^15.6.0",
     "react-addons-transition-group": "^15.6.0",
     "react-d3-basic": "^1.6.11",
+    "react-d3-tooltip": "^1.4.14",
     "react-dev-utils": "^3.1.0",
     "react-dom": "^15.6.1",
     "react-error-overlay": "^1.0.10",
